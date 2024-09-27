@@ -1,0 +1,80 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variables.module.scss';
+
+
+
+.container{
+    @include flex_box_custom(center, center, 0px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.containerHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 83px;
+    width: 1250px;
+  
+}
+.containerBoxIcon{
+    @include flex_box_custom(center, center, 10px);
+   
+}
+
+.containerBox{
+    @include flex_box_custom(center, center, 20px);
+}
+
+.containerMenu{
+    @include flex_box_custom(center, center, 40px);
+}
+
+
+.BoxIcon{
+    @include radius_common(50%);
+    @include flex_box_custom(center, center, 0px);
+    background-color: $primary_color;
+    width: 26px;
+    height: 26px;
+
+}
+
+
+.BoxLogo{
+    width: 153px;
+    height: 53px;
+}
+
+.wicons{
+    width: 24px;
+    height: 24px;
+    padding-left: 6px;
+}
+.menu{
+    cursor: pointer;
+    padding-top: 10px;
+    font-size: 16px;
+    color: $primary_color;
+    letter-spacing: 0.1em;
+}
+
+.menu::after{
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: $primary_color;
+    margin-top: 6px ;
+    opacity: 0;
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform 0.5s;
+}
+
+.menu:hover::after{
+    opacity: 1;
+    transform: scale(1);
+}
