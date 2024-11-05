@@ -3,6 +3,7 @@ import MyHeader from '../Header/Header';
 import Banner from '../Banner/Banner';
 import Info from '../Info/Info';
 import AdvanceHeadling from '../AdvanceHeadling/AdvanceHeadling';
+import HeadingListProduct from '../HeadingListProduct/HeadingListProduct';
 
 
 function HomePage() {
@@ -14,7 +15,7 @@ function HomePage() {
                 <Banner />
                 <Info/>
                 <AdvanceHeadling/>
-                
+                <HeadingListProduct/>
             </div>
        
     );
