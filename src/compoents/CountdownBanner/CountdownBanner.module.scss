@@ -1,7 +1,7 @@
 @import '@styles/variables.module.scss';
 @import '@styles/mixins.module.scss';
 
-.container{
+.container {
     background-image: url(https://i.pinimg.com/564x/af/ae/f1/afaef16bac32cafacbaa097d2f067739.jpg);
     height: 409px;
     width: calc(100% / 2);
@@ -10,17 +10,18 @@
     box-sizing: border-box;
 }
 
-.containerTimmer{
+.containerTimmer {
     @include flex_box_custom(center, center, 10px);
 }
-.title{
+.title {
     font-size: 28px;
     color: $four_color;
     text-align: center;
     margin-bottom: 5px;
 }
-.btn{
+.btn {
     margin-top: 20px;
     text-align: center;
-
+    width: 172px;
+    margin: 30px auto;
 }

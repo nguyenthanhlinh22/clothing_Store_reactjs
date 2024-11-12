@@ -6,7 +6,8 @@ import AdvanceHeadling from '../AdvanceHeadling/AdvanceHeadling';
 import HeadingListProduct from '../HeadingListProduct/HeadingListProduct';
 import { getProducts } from '@/apis/productService'; // Import service
 import PopularProduct from '../PopularProduct/PopularProduct';
-
+import SaleHomePage from '../SaleHomePage/SaleHomePage';
+import MyFooter from '../MyFooter/MyFooter';
 function HomePage() {
     const [products, setProducts] = useState([]); // State để lưu sản phẩm
     const [loading, setLoading] = useState(true); // State để kiểm tra trạng thái tải
@@ -46,6 +47,8 @@ function HomePage() {
             <AdvanceHeadling />
             <HeadingListProduct data={products.slice(0,2)} />
             <PopularProduct data={products.slice(2,10)} />
+            <SaleHomePage/>
+            <MyFooter />
         </div>
     );
 }
