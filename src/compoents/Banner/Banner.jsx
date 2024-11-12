@@ -6,7 +6,7 @@ function Banner() {
     return (
         <div className={container}>
             <div className={content}>
-                <h1 className={title}>XStore Marseille</h1>
+                <h1 className={title}>Books Store</h1>
                 <div className={des}>
                     Make yours celebrations even more special this years with
                     beautiful.

@@ -4,17 +4,24 @@ import heartIcon from '@icons/svg/heart_icon.svg';
 import CartIcon from '@icons/svg/cart_icon.svg';
 import BoxIcon from '../Header/BoxIcon/BoxIcon';
 
-function ProductItem() {
+function ProductItem({ src , preSrc , title , price }) {
     const { boxImg, showImgWhenHover , showFuntionWhenHover, boxIcon,titleProduct, PriceProduct } = styles;
+
+
+
+    // Định dạng giá theo VND
+    const formattedPrice = new Intl.NumberFormat('vi-VN').format(price);
+
     return (
         <div>
+            {/* Img  */}
             <div className={boxImg}>
                 <img
-                    src='https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Image-1.1-min-285x340.jpg'
+                    src={src}
                     alt=''
                 />
                 <img
-                    src='https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Image-1.2-min-285x340.jpg'
+                    src={preSrc}
                     alt=''
                     className={showImgWhenHover}
                 />
@@ -33,8 +40,9 @@ function ProductItem() {
                     </div>
                 </div>
             </div>
-            <div className={titleProduct}>10k yellow</div>
-            <div className={PriceProduct}>$1000</div>
+            {/* content */}
+            <div className={titleProduct}>{title}</div>
+            <div className={PriceProduct}>{formattedPrice} VND</div>
         </div>
     );
 }

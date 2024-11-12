@@ -2,7 +2,7 @@
 @import '@styles/variables.module.scss';
 
 .boxImg {
-    width: 100%;
+    width: 250px;
     height: 353px;
     position: relative;
     
@@ -55,10 +55,12 @@
     font-size: 16px;
     color: $four_color;
     margin: 6px 0;
+    text-align: center;
 }
 .PriceProduct {
     font-size: 16px;
     color: $thr_color;
     font-weight: 400;
+    text-align: center;
 }
 

@@ -1,19 +1,13 @@
-import CountdownTimer from "../CountdownTime/CountdownTime";
 import MainLayout from "../Layout/Layout";
-import styles from './HeadlingListProduct.module.scss';
-import CountdownBanner from "../CountdownBanner/CountdownBanner";
-import ProductItem from "../ProductItem/ProductItem";
+import ProductItem from "../ProductItem/ProductItem"; // Corrected import path
+import styles from "./PopularProduct.module.scss";
 
-function HeadingListProduct({ data }) {
-    const { container, containerItem } = styles;
-    const targetDate = new Date('2021-12-31T00:00:00');
-    console.log("HeadingListProduct -> data", data);
-    
+function PopularProduct({data}) {
+    const { container } = styles;
     return (
-        <MainLayout>
-            <div className={container}>
-                <CountdownBanner />
-                <div className={containerItem}>
+        <>
+            <MainLayout>
+                <div className={container}> 
                     {
                         data.map((item) => {
                             return (  // Make sure to return the ProductItem component here
@@ -25,12 +19,13 @@ function HeadingListProduct({ data }) {
                                     price={item.price}
                                 />
                             );
-                        })
-                    }
+                        }
+                        )} 
+
                 </div>
-            </div>
-        </MainLayout>
+            </MainLayout>
+        </>
     );
 }
 
-export default HeadingListProduct;
+export default PopularProduct;
