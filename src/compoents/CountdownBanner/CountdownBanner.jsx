@@ -11,9 +11,9 @@ function CountdownBanner() {
             <div className={containerTimmer}>
                 <CountdownTimer targetDate={targetDate}/>
             </div>
-            <p className={title}>The classics make a comeback</p>
+            <p className={title}>Những Tác Phẩm Hay Sẽ Trở Lại</p>
             <div className={btn}>
-                <MyButton content={'Buy Now'}/>
+                <MyButton content={'Mua Ngay'}/>
             </div>
         </div>
     );

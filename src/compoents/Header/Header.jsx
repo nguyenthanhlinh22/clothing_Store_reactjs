@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BoxIcon from './BoxIcon/BoxIcon';
 import { dataBoxIcon, dataMenu } from './Constants';
 import styles from './styles.module.scss';
 import Menu from './Menu/Menu';
-import Logo from '@icons/images/Logo.png';
 import reLoadIcon from '@icons/svg/reload_icon.svg';
 import heartIcon from '@icons/svg/heart_icon.svg';
 import CartIcon from '@icons/svg/cart_icon.svg';
+import useScrollHeading from '@hooks/useScrollHeading';
+import classNames from 'classnames';
+import { useState } from 'react';
 
 function MyHeader() {
     const {
@@ -16,10 +18,22 @@ function MyHeader() {
         containerHeader,
         containerBox,
         BoxLogo,
-        wicons
+        wicons,
+        fixedHeader,
+        topHeader
     } = styles;
+
+    const { scrollPosition } = useScrollHeading();
+    const [fixedPosition, setFixedPosition] = useState(false);
+    useEffect(() => {
+        setFixedPosition(scrollPosition > 80);
+    }, [scrollPosition]);
     return (
-        <div className={container}> 
+        <div
+            className={classNames(container, topHeader, {
+                [fixedHeader]: fixedPosition
+            })}
+        >
             <div className={containerHeader}>
                 <div className={containerBox}>
                     <div className={containerBoxIcon}>
@@ -37,7 +51,7 @@ function MyHeader() {
                 </div>
                 {/* Logo */}
                 <div>
-                    <img className={BoxLogo} src={Logo} />
+                    <img className={BoxLogo} src='src/assets/images/Logo.png' />
                 </div>
                 <div className={containerBox}>
                     <div className={containerMenu}>

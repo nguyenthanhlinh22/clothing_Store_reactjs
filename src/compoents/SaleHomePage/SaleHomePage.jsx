@@ -1,6 +1,6 @@
 import MyButton from '../Button/Button';
 import styles from './SaleHomePage.module.scss';
-import useTranslateX from './TranslateXImage';
+import useTranslateX from '@hooks/useTranslateXImage';
 
 function SaleHomePage() {
     const { container, title, boxBtn, des, boxImage } = styles;
@@ -19,7 +19,7 @@ function SaleHomePage() {
                 <img src='src/assets/images/img1.jpg' />
             </div>
             <div>
-                <h2 className={title}>Books Sale Of The Years</h2>
+                <h2 className={title}>Sách Hay Của Năm</h2>
                 <p className={des}>
                     Sách là Kho Tri Thức Vô Hạn, Các Bạn Hãy trở thành nhân tài
                     của đất nước

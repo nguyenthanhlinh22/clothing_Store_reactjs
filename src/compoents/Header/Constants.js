@@ -6,12 +6,12 @@ const dataBoxIcon = [
 ];
 
 const dataMenu = [
-    { content: 'Element', href: '#' },
-    { content: 'Our Shop', href: '#' },
-    { content: 'About us', href: '#' },
-    { content: 'Contacts', href: '#' },
-    { content: 'Search', href: '#' },
-    { content: 'Sign in ', href: '#' }
+    { content: 'Trang Chủ', href: '/' },
+    { content: 'Của Hàng', href: '#' },
+    { content: 'Thông Tin', href: '#' },
+    { content: 'Liên Hệ', href: '#' },
+    { content: 'Tìm Kiếm ', href: '#' },
+    { content: 'Đăng Nhập ', href: '#' }
 ];
 
 export { dataBoxIcon, dataMenu };

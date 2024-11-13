@@ -6,13 +6,12 @@ function Banner() {
     return (
         <div className={container}>
             <div className={content}>
-                <h1 className={title}>Books Store</h1>
+                <h1 className={title}>Của Hàng Sách</h1>
                 <div className={des}>
-                    Make yours celebrations even more special this years with
-                    beautiful.
+                Hãy làm cho tri thức của bạn thêm phần đặc biệt trong năm nay.
                 </div>
                 <div className={btn}>
-                <MyButton content={'Go to shop '} />    
+                <MyButton content={'Đến Của Hàng'} />    
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ function HomePage() {
             <Info />
             <AdvanceHeadling />
             <HeadingListProduct data={products.slice(0,2)} />
-            <PopularProduct data={products.slice(2,10)} />
+            <PopularProduct data={products.slice(2, 11)} />
             <SaleHomePage/>
             <MyFooter />
         </div>

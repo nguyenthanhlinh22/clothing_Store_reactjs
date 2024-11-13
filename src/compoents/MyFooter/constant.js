@@ -1,10 +1,10 @@
 const dataMenu = [
     { content: 'Trang Chủ', href: '#' },
     { content: 'Sản Phẩm', href: '#' },
-    { content: 'Blog', href: '#' },
-    { content: 'About us', href: '#' },
-    { content: 'Contact us', href: '#' },
-    { content: 'Compare', href: '#' }
+    { content: 'Tin Tức', href: '#' },
+    { content: 'Thông Tin', href: '#' },
+    { content: 'Liên Hệ', href: '#' },
+    { content: 'So Sánh', href: '#' }
 ];
 
 export { dataMenu };
