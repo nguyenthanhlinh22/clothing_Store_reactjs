@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import BoxIcon from './BoxIcon/BoxIcon';
 import { dataBoxIcon, dataMenu } from './Constants';
 import styles from './styles.module.scss';
 import Menu from './Menu/Menu';
+import { TfiReload } from 'react-icons/tfi';
+import { CiHeart } from 'react-icons/ci';
+import { PiShoppingCartLight } from 'react-icons/pi';
+
 import reLoadIcon from '@icons/svg/reload_icon.svg';
 import heartIcon from '@icons/svg/heart_icon.svg';
 import CartIcon from '@icons/svg/cart_icon.svg';
 import useScrollHeading from '@hooks/useScrollHeading';
 import classNames from 'classnames';
 import { useState } from 'react';
-
+import { SideBarContext } from '@/contexts/SideBarProvider';
 function MyHeader() {
     const {
         container,
@@ -25,9 +29,22 @@ function MyHeader() {
 
     const { scrollPosition } = useScrollHeading();
     const [fixedPosition, setFixedPosition] = useState(false);
+    const {  setIsOpen, setType } = useContext(SideBarContext);
+
+    const handleOpenSideBar = (type) => {
+        setIsOpen(true);
+        setType(type);
+    };
+
+
     useEffect(() => {
         setFixedPosition(scrollPosition > 80);
     }, [scrollPosition]);
+
+    
+
+
+
     return (
         <div
             className={classNames(container, topHeader, {
@@ -45,7 +62,9 @@ function MyHeader() {
                     </div>
                     <div className={containerMenu}>
                         {dataMenu.slice(0, 3).map(item => {
-                            return <Menu content={item.content} />;
+                            return (
+                                <Menu content={item.content} href={item.href} />
+                            );
                         })}
                     </div>
                 </div>
@@ -56,21 +75,33 @@ function MyHeader() {
                 <div className={containerBox}>
                     <div className={containerMenu}>
                         {dataMenu.slice(3, dataMenu.length).map(item => {
-                            return <Menu content={item.content} />;
+                            return (
+                                <Menu
+                                    content={item.content}
+                                 
+                                />
+                            );
                         })}
                     </div>
                     <div className={containerBoxIcon}>
-                        <img
-                            className={wicons}
-                            src={reLoadIcon}
-                            alt='reLoadIcon'
+                        <TfiReload
+                            style={{
+                                fontSize: '20px'
+                            }}
+                            onClick={() => handleOpenSideBar('compare')}
                         />
-                        <img
-                            className={wicons}
-                            src={heartIcon}
-                            alt='heartIcon'
+                        <CiHeart
+                            style={{
+                                fontSize: '25px'
+                            }}
+                            onClick={() => handleOpenSideBar('wishlist')}
                         />
-                        <img className={wicons} src={CartIcon} alt='CartIcon' />
+                        <PiShoppingCartLight
+                            style={{
+                                fontSize: '25px'
+                            }}
+                            onClick={() => handleOpenSideBar('cart')}
+                        />
                     </div>
                 </div>
             </div>

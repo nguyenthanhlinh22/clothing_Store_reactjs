@@ -1,12 +1,21 @@
+
 import styles from '../styles.module.scss';
-import { dataMenu } from '../Constants';
+import React, { useContext } from 'react';
+import { SideBarContext } from '@/contexts/SideBarProvider'; // Import the context
 
-function Menu({content, href}) {
+function Menu({ content, href }) {
+    const { menu } = styles;
+    const { setType, setIsOpen } = useContext(SideBarContext); // Use context to get setType and setIsOpen
 
-    const {menu} = styles;
+    const handleClickShowLogin = () => {
+        setIsOpen(true);
+        setType('Đăng nhập');
+    };
 
-    return (  
-        <div className={menu}>{content}</div>
+    return (
+        <div className={menu} onClick={handleClickShowLogin}>
+            {content}
+        </div>
     );
 }
 

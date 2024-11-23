@@ -16,9 +16,9 @@ function HeadingListProduct({ data }) {
                 <div className={containerItem}>
                     {
                         data.map((item) => {
-                            return (  // Make sure to return the ProductItem component here
+                            return (
                                 <ProductItem
-                                    key={item.id} // Use item.id as key for better performance
+                                    key={item.id}
                                     src={item.images[0]}  // Assuming the first image is for the default src
                                     preSrc={item.images[1]}  // Assuming the second image is for the hover effect
                                     title={item.name}

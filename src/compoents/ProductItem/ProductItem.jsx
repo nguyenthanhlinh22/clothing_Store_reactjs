@@ -1,11 +1,17 @@
 import styles from './ProductItem.module.scss';
 import reLoadIcon from '@icons/svg/reload_icon.svg';
-import heartIcon from '@icons/svg/heart_icon.svg';
-import CartIcon from '@icons/svg/cart_icon.svg';
-import BoxIcon from '../Header/BoxIcon/BoxIcon';
+
+import { IoReloadSharp } from "react-icons/io5";
+import { CiShoppingCart } from "react-icons/ci";
+import { CiHeart } from "react-icons/ci";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+
+
+
+
 
 function ProductItem({ src , preSrc , title , price }) {
-    const { boxImg, showImgWhenHover , showFuntionWhenHover, boxIcon,titleProduct, PriceProduct } = styles;
+    const { boxImg, showImgWhenHover , showFuntionWhenHover, boxIcon,titleProduct, PriceProduct,img } = styles;
 
 
 
@@ -27,16 +33,16 @@ function ProductItem({ src , preSrc , title , price }) {
                 />
                 <div className={showFuntionWhenHover}>
                     <div className={boxIcon}>
-                        <img src={reLoadIcon} alt='reLoadIcon' />
+                        <CiShoppingCart alt='CiShoppingCart' style={{ fontSize: '22px'}} /> 
                     </div>
                     <div className={boxIcon}>
-                        <img src={reLoadIcon} alt='reLoadIcon' />
+                        <CiHeart alt='CiHeart' style={{ fontSize: '25px'}} /> 
                     </div>
                     <div className={boxIcon}>
-                        <img src={reLoadIcon} alt='reLoadIcon' />
+                    <IoReloadSharp alt='IoReloadSharp' style={{ fontSize: '20px'}} /> 
                     </div>
                     <div className={boxIcon}>
-                        <img src={reLoadIcon} alt='reLoadIcon' />
+                    <MdOutlineRemoveRedEye alt='IoReloadSharp' style={{ fontSize: '20px'}}       /> 
                     </div>
                 </div>
             </div>
