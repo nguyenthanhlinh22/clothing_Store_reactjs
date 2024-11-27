@@ -60,7 +60,7 @@ function ItemProduct({
                 <div className={price}>
                     Giá: {new Intl.NumberFormat('vi-VN').format(100000)} VND
                 </div>
-                <div className={price}>SKU: {skuProduct}</div>
+                <div className={price}>SKU:12312312 {skuProduct}</div>
             </div>
 
             {isDelete && (

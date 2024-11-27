@@ -1,33 +1,48 @@
-import React from 'react';
-import styles from './InputCommon.module.scss';
+import React, { useState } from 'react';
 import { IoEyeOutline } from 'react-icons/io5';
 import { FaRegEyeSlash } from 'react-icons/fa';
-import { useState } from 'react';
+import styles from './InputCommon.module.scss';
 
-function InputCommon({ label, type, isRequired = false }) {
-    const { container, lableInput, boxInput, boxIcon } = styles;
+function InputCommon({
+    label,
+    type = 'text',
+    isRequired = false,
+    formik,
+    id,
+    ...props
+}) {
+    const { container, labelInput, boxInput, boxIcon, errorMessage } = styles;
     const [showPassword, setShowPassword] = useState(false);
 
     const isPassword = type === 'password';
-    const isShowTextPassword =
-        type === 'password' && showPassword ? 'text' : type;
+    const inputType = isPassword && showPassword ? 'text' : type;
 
-    const handleShowPassword = () => {
-        setShowPassword(!showPassword);
-    };
+    const handleShowPassword = () => setShowPassword((prev) => !prev);
+
     return (
         <div className={container}>
-            <div className={lableInput}>
+            <label htmlFor={id} className={labelInput}>
                 {label} {isRequired && <span>*</span>}
-            </div>
+            </label>
             <div className={boxInput}>
-                <input type={isShowTextPassword} />
+                <input
+                    id={id}
+                    type={inputType}
+                    name={id}
+                    onBlur={formik.handleBlur}
+                    onChange={formik.handleChange}
+                    value={formik.values[id]}
+                    {...props}
+                />
                 {isPassword && (
                     <div className={boxIcon} onClick={handleShowPassword}>
                         {showPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
                     </div>
                 )}
             </div>
+            {formik.touched[id] && formik.errors[id] && (
+                <div className={errorMessage}>{formik.errors[id]}</div>
+            )}
         </div>
     );
 }

@@ -7,11 +7,11 @@ const dataBoxIcon = [
 
 const dataMenu = [
     { content: 'Trang Chủ', href: '/' },
-    { content: 'Của Hàng', href: '#' },
+    { content: 'Cửa Hàng', href: '#' },
     { content: 'Thông Tin', href: '#' },
     { content: 'Liên Hệ', href: '#' },
     { content: 'Tìm Kiếm ', href: '#' },
-    { content: 'Đăng Nhập ', href: '#' }
+    { content: 'Đăng Nhập', href: '#' }
 ];
 
 export { dataBoxIcon, dataMenu };

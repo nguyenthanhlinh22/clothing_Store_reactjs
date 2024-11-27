@@ -7,9 +7,6 @@ import { TfiReload } from 'react-icons/tfi';
 import { CiHeart } from 'react-icons/ci';
 import { PiShoppingCartLight } from 'react-icons/pi';
 
-import reLoadIcon from '@icons/svg/reload_icon.svg';
-import heartIcon from '@icons/svg/heart_icon.svg';
-import CartIcon from '@icons/svg/cart_icon.svg';
 import useScrollHeading from '@hooks/useScrollHeading';
 import classNames from 'classnames';
 import { useState } from 'react';

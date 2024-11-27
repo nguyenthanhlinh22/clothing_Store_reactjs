@@ -1,7 +1,7 @@
 import axiosClient from './axiosClient';
 
 const getProducts  = async () => {
-    const url = '/products';
+    const url = 'https://virtserver.swaggerhub.com/THANHLINHNGUYEN22032/Books/1.0.0/products';
     try {
         const response = await axiosClient.get(url);
         console.log("Fetch products successfully: ", response.data);
